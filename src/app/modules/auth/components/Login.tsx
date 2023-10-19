@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import {useFormik} from 'formik'
 import {login} from '../core/_requests'
 import {useAuth} from '../core/Auth'
+import logoPizza from './LogoPizza.png'; 
 
 const loginSchema = Yup.object().shape({
   username: Yup.string()
@@ -62,6 +63,8 @@ export function Login() {
       noValidate
       id='kt_login_signin_form'
     >
+
+
       {/* begin::Heading */}
       <div className='text-center mb-11'>
         <h1 className='text-dark fw-bolder mb-3'>Inicio de Sesión</h1>
@@ -138,21 +141,22 @@ export function Login() {
 
         {/* begin::Link */}
         <Link to='/auth/forgot-password' className='link-primary'>
-          Forgot Password ?
+        ¿Olvidaste tu contraseña?
+    
         </Link>
         {/* end::Link */}
       </div>
-      {/* end::Wrapper */}
 
       {/* begin::Action */}
       <div className='d-grid mb-10'>
         <button
           type='submit'
           id='kt_sign_in_submit'
-          className='btn btn-primary'
+          className='btn'
+          style={{background: 'linear-gradient(to right, #F2AC29, #FF5733)',color: 'white'}}
           disabled={formik.isSubmitting || !formik.isValid}
         >
-          {!loading && <span className='indicator-label'>Continuar</span>}
+          {!loading && <span className='indicator-label'>Iinisiar Sesión</span>}
           {loading && (
             <span className='indicator-progress' style={{display: 'block'}}>
               Please wait...
@@ -164,9 +168,9 @@ export function Login() {
       {/* end::Action */}
 
       <div className='text-gray-500 text-center fw-semibold fs-6'>
-        Not a Member yet?{' '}
+      ¿No tienes una cuenta?{' '}
         <Link to='/auth/registration' className='link-primary'>
-          Sign up
+          Regístrate
         </Link>
       </div>
     </form>

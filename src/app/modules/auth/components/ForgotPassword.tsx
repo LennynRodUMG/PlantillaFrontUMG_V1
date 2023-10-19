@@ -51,12 +51,12 @@ export function ForgotPassword() {
     >
       <div className='text-center mb-10'>
         {/* begin::Title */}
-        <h1 className='text-dark fw-bolder mb-3'>Forgot Password ?</h1>
+        <h1 className='text-dark fw-bolder mb-3'>¿Olvidaste tu contraseña?</h1>
         {/* end::Title */}
 
         {/* begin::Link */}
         <div className='text-gray-500 fw-semibold fs-6'>
-          Enter your email to reset your password.
+        Ingresa tu correo electrónico para restablecer tu contraseña.
         </div>
         {/* end::Link */}
       </div>
@@ -65,21 +65,22 @@ export function ForgotPassword() {
       {hasErrors === true && (
         <div className='mb-lg-15 alert alert-danger'>
           <div className='alert-text font-weight-bold'>
-            Sorry, looks like there are some errors detected, please try again.
+          Lo sentimos, parece que se han detectado algunos errores. Inténtalo de nuevo.
           </div>
         </div>
       )}
 
       {hasErrors === false && (
         <div className='mb-10 bg-light-info p-8 rounded'>
-          <div className='text-info'>Sent password reset. Please check your email</div>
+          <div className='text-info'>
+Restablecimiento de contraseña enviado. Por favor revise su correo electrónico</div>
         </div>
       )}
       {/* end::Title */}
 
       {/* begin::Form group */}
       <div className='fv-row mb-8'>
-        <label className='form-label fw-bolder text-gray-900 fs-6'>Email</label>
+        <label className='form-label fw-bolder text-gray-900 fs-6'>Correo electrónico</label>
         <input
           type='email'
           placeholder=''
@@ -105,11 +106,12 @@ export function ForgotPassword() {
 
       {/* begin::Form group */}
       <div className='d-flex flex-wrap justify-content-center pb-lg-0'>
-        <button type='submit' id='kt_password_reset_submit' className='btn btn-primary me-4'>
-          <span className='indicator-label'>Submit</span>
+        <button type='submit' id='kt_password_reset_submit' className='btn btn-primary me-4'    
+         style={{background: 'linear-gradient(to right, #F2AC29, #FF5733)',color: 'white'}}>
+          <span className='indicator-label'>Enviar</span>
           {loading && (
             <span className='indicator-progress'>
-              Please wait...
+              Espere por favor...
               <span className='spinner-border spinner-border-sm align-middle ms-2'></span>
             </span>
           )}
@@ -119,9 +121,10 @@ export function ForgotPassword() {
             type='button'
             id='kt_login_password_reset_form_cancel_button'
             className='btn btn-light'
+            style={{background: 'linear-gradient(to right, #260101, #FF5733)',color: 'white'}}
             disabled={formik.isSubmitting || !formik.isValid}
           >
-            Cancel
+            Cancelar
           </button>
         </Link>{' '}
       </div>
